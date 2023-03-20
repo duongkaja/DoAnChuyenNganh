@@ -1,0 +1,275 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 16.75, 18.25" name="WebHocThem">
+  <DataContextMoniker Name="/WebHocThemDataContext" />
+  <nestedChildShapes>
+    <classShape Id="334ca531-a152-408c-9fc3-6d8f3e2ffd4c" absoluteBounds="0.75, 6.25, 2, 1.1939925130208344">
+      <DataClassMoniker Name="/WebHocThemDataContext/AspNetRole" />
+      <nestedChildShapes>
+        <elementListCompartment Id="a75751b8-78b3-4f6d-8b3c-0c654bc2c611" absoluteBounds="0.765, 6.71, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="e9c84d95-4b64-46ad-ab07-2e94cd07dfdd" absoluteBounds="3.5, 13, 2, 1.9631982421874987">
+      <DataClassMoniker Name="/WebHocThemDataContext/User" />
+      <nestedChildShapes>
+        <elementListCompartment Id="164b08f8-3722-46ce-bd24-0842eaec0c59" absoluteBounds="3.515, 13.46, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="81299160-b07d-49ec-a5a9-c340cf1d8620" absoluteBounds="3.5, 10.625, 2, 1.5785953776041666">
+      <DataClassMoniker Name="/WebHocThemDataContext/AspNetUserClaim" />
+      <nestedChildShapes>
+        <elementListCompartment Id="980ce378-82e4-4677-ba12-d15479c2d639" absoluteBounds="3.515, 11.085, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="f63eea99-fe86-4c52-8c6f-704eba7b39f8" absoluteBounds="3.5, 8.5, 2, 1.3862939453124987">
+      <DataClassMoniker Name="/WebHocThemDataContext/AspNetUserLogin" />
+      <nestedChildShapes>
+        <elementListCompartment Id="1691dc88-6893-4da6-b3e6-d8bd21c5d592" absoluteBounds="3.515, 8.96, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="c1a71eb7-2c68-4780-945a-9259909966e6" absoluteBounds="3.5, 6.25, 2, 1.1939925130208344">
+      <DataClassMoniker Name="/WebHocThemDataContext/AspNetUserRole" />
+      <nestedChildShapes>
+        <elementListCompartment Id="ff2cff64-5eeb-47f9-8e11-15468df2cb8b" absoluteBounds="3.515, 6.71, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="62525427-2294-4e5e-9dcd-da31b067bc8b" absoluteBounds="0.75, 8.25, 2, 3.1170068359375023">
+      <DataClassMoniker Name="/WebHocThemDataContext/AspNetUser" />
+      <nestedChildShapes>
+        <elementListCompartment Id="a7ac2ba1-2dbb-4ed3-a49c-22bcaf945f8c" absoluteBounds="0.765, 8.71, 1.9700000000000002, 2.5570068359375" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="bb56584a-c087-44a2-a9ec-231e53d2b234" absoluteBounds="9, 7.375, 2, 1.3862939453125005">
+      <DataClassMoniker Name="/WebHocThemDataContext/BienLai" />
+      <nestedChildShapes>
+        <elementListCompartment Id="56818ff0-5b30-42e0-b179-30b81a1c91ab" absoluteBounds="9.015, 7.8350000000000009, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="c67974f0-e7c3-4a33-a4a8-60c29650295d" absoluteBounds="9, 16.75, 2, 1.1939925130208309">
+      <DataClassMoniker Name="/WebHocThemDataContext/Ca" />
+      <nestedChildShapes>
+        <elementListCompartment Id="20538bd6-d81f-46d3-849f-a36eef7dea06" absoluteBounds="9.015, 17.21, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="3ae66f09-c3d4-414a-b534-bd7088b84f78" absoluteBounds="6.25, 7.375, 2, 1.1939925130208344">
+      <DataClassMoniker Name="/WebHocThemDataContext/DiaDiem" />
+      <nestedChildShapes>
+        <elementListCompartment Id="4900a5a1-42b7-4546-8360-b94a0c3b01f2" absoluteBounds="6.265, 7.835, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="55b522d8-b2e5-426e-8ba6-e94a2dff46b7" absoluteBounds="6.25, 13.125, 2, 1.7708968098958344">
+      <DataClassMoniker Name="/WebHocThemDataContext/DiemThi" />
+      <nestedChildShapes>
+        <elementListCompartment Id="75f3e90b-71d7-4762-a6dd-52c1388d0e14" absoluteBounds="6.265, 13.585, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="58a1ee3a-cdde-4a45-99ed-9d7c3d83f072" absoluteBounds="6.25, 9.625, 2, 2.7324039713541666">
+      <DataClassMoniker Name="/WebHocThemDataContext/KhoaHoc" />
+      <nestedChildShapes>
+        <elementListCompartment Id="a675d1b6-5a29-4634-ac72-8d0d7206d35c" absoluteBounds="6.265, 10.085, 1.9700000000000002, 2.1724039713541665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="a6527d6a-e74b-4709-901f-f8bb585ee425" absoluteBounds="9, 9.875, 2, 2.1554996744791666">
+      <DataClassMoniker Name="/WebHocThemDataContext/KyThi" />
+      <nestedChildShapes>
+        <elementListCompartment Id="d178c3de-c2fe-415d-9cc5-b12d4f32f5c5" absoluteBounds="9.015, 10.335, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="cd796904-88fd-48a2-85b0-bce9e3863727" absoluteBounds="3.5, 16.25, 2, 1.3862939453125023">
+      <DataClassMoniker Name="/WebHocThemDataContext/Level" />
+      <nestedChildShapes>
+        <elementListCompartment Id="62146360-c257-47d0-9292-48072c80064e" absoluteBounds="3.515, 16.71, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="84c4218e-735a-46fe-bedd-1fe74119d92c" absoluteBounds="9, 13.25, 2, 2.1554996744791666">
+      <DataClassMoniker Name="/WebHocThemDataContext/Lop" />
+      <nestedChildShapes>
+        <elementListCompartment Id="a73b737a-c8b8-42ff-802e-d385e5f0311e" absoluteBounds="9.015, 13.71, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="06f50ea7-6d49-49d6-b68d-2e0d48711375" absoluteBounds="0.75, 16.375, 2, 1.1939925130208309">
+      <DataClassMoniker Name="/WebHocThemDataContext/MonHoc" />
+      <nestedChildShapes>
+        <elementListCompartment Id="922936d3-2da7-4161-a315-631d3d65e506" absoluteBounds="0.765, 16.835, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="216b234e-26f5-4345-bd86-55c4393b556a" absoluteBounds="11.75, 10.125, 2, 2.1554996744791666">
+      <DataClassMoniker Name="/WebHocThemDataContext/PhieuDangKy" />
+      <nestedChildShapes>
+        <elementListCompartment Id="b1c29cfd-206a-4b9c-a088-bb19abefb70b" absoluteBounds="11.765, 10.585, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="7b2a3d9c-09c6-4628-9dad-c1f8e472bf44" absoluteBounds="14.5, 10.375, 2, 1.5785953776041666">
+      <DataClassMoniker Name="/WebHocThemDataContext/PhieuDanhGia" />
+      <nestedChildShapes>
+        <elementListCompartment Id="eb3fe136-ea21-4b4c-b564-18744b22de8d" absoluteBounds="14.515, 10.835, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="7b3dbeda-21ae-4918-ae66-7572a5fcba7f" absoluteBounds="11.75, 13.5, 2, 1.5785953776041666">
+      <DataClassMoniker Name="/WebHocThemDataContext/ThoiKhoaBieu" />
+      <nestedChildShapes>
+        <elementListCompartment Id="fcf3e372-e6c9-476b-ac29-80c72c3499d4" absoluteBounds="11.765, 13.96, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(2.75 : 6.84699625651042); (3.5 : 6.84699625651042)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/WebHocThemDataContext/AspNetRole/AspNetRole_AspNetUserRole" />
+      <nodes>
+        <classShapeMoniker Id="334ca531-a152-408c-9fc3-6d8f3e2ffd4c" />
+        <classShapeMoniker Id="c1a71eb7-2c68-4780-945a-9259909966e6" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(1.75 : 11.3670068359375); (1.75 : 13.9815991210937); (3.5 : 13.9815991210937)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/WebHocThemDataContext/AspNetUser/AspNetUser_User" />
+      <nodes>
+        <classShapeMoniker Id="62525427-2294-4e5e-9dcd-da31b067bc8b" />
+        <classShapeMoniker Id="e9c84d95-4b64-46ad-ab07-2e94cd07dfdd" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.75 : 10.9960034179688); (3.5 : 10.9960034179688)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/WebHocThemDataContext/AspNetUser/AspNetUser_AspNetUserClaim" />
+      <nodes>
+        <classShapeMoniker Id="62525427-2294-4e5e-9dcd-da31b067bc8b" />
+        <classShapeMoniker Id="81299160-b07d-49ec-a5a9-c340cf1d8620" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.75 : 9.19314697265625); (3.5 : 9.19314697265625)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/WebHocThemDataContext/AspNetUser/AspNetUser_AspNetUserLogin" />
+      <nodes>
+        <classShapeMoniker Id="62525427-2294-4e5e-9dcd-da31b067bc8b" />
+        <classShapeMoniker Id="f63eea99-fe86-4c52-8c6f-704eba7b39f8" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.75 : 8.25153746153846); (3.125 : 7.87653746153846); (3.125 : 7.17674638476563); (3.5 : 7.17674638476563)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/WebHocThemDataContext/AspNetUser/AspNetUser_AspNetUserRole" />
+      <nodes>
+        <classShapeMoniker Id="62525427-2294-4e5e-9dcd-da31b067bc8b" />
+        <classShapeMoniker Id="c1a71eb7-2c68-4780-945a-9259909966e6" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.5 : 14.0104484049479); (6.25 : 14.0104484049479)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/WebHocThemDataContext/User/User_DiemThi" />
+      <nodes>
+        <classShapeMoniker Id="e9c84d95-4b64-46ad-ab07-2e94cd07dfdd" />
+        <classShapeMoniker Id="55b522d8-b2e5-426e-8ba6-e94a2dff46b7" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.4682867976262 : 13); (5.875 : 12.5932867976262); (5.875 : 10.9912019856771); (6.25 : 10.9912019856771)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/WebHocThemDataContext/User/User_KhoaHoc" />
+      <nodes>
+        <classShapeMoniker Id="e9c84d95-4b64-46ad-ab07-2e94cd07dfdd" />
+        <classShapeMoniker Id="58a1ee3a-cdde-4a45-99ed-9d7c3d83f072" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(9 : 12.0304996744792); (8.625 : 12.4054996744792); (8.625 : 14.0104484049479); (8.58333333333333 : 14.0104484049479 : JumpStart); (8.41666666666667 : 14.0104484049479 : JumpEnd); (8.25 : 14.0104484049479)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/WebHocThemDataContext/KyThi/KyThi_DiemThi" />
+      <nodes>
+        <classShapeMoniker Id="a6527d6a-e74b-4709-901f-f8bb585ee425" />
+        <classShapeMoniker Id="55b522d8-b2e5-426e-8ba6-e94a2dff46b7" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(8.25 : 10.9214973372396); (9 : 10.9214973372396)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/WebHocThemDataContext/KhoaHoc/KhoaHoc_KyThi" />
+      <nodes>
+        <classShapeMoniker Id="58a1ee3a-cdde-4a45-99ed-9d7c3d83f072" />
+        <classShapeMoniker Id="a6527d6a-e74b-4709-901f-f8bb585ee425" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(8.25 : 8.56899251302083); (8.625 : 8.94399251302083); (8.625 : 10.9214978372396); (9 : 10.9214978372396)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/WebHocThemDataContext/DiaDiem/DiaDiem_KyThi" />
+      <nodes>
+        <classShapeMoniker Id="3ae66f09-c3d4-414a-b534-bd7088b84f78" />
+        <classShapeMoniker Id="a6527d6a-e74b-4709-901f-f8bb585ee425" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.5 : 16.3118490375601); (6.0625 : 15.7493490375601); (6.0625 : 11.7055549785156); (6.25 : 11.7055549785156)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/WebHocThemDataContext/Level/Level_KhoaHoc" />
+      <nodes>
+        <classShapeMoniker Id="cd796904-88fd-48a2-85b0-bce9e3863727" />
+        <classShapeMoniker Id="58a1ee3a-cdde-4a45-99ed-9d7c3d83f072" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(8.25 : 12.2958645098157); (8.44107443490112 : 12.4869389447168 : JumpStart); (8.55892556509888 : 12.6047900749146 : JumpEnd); (8.56607443490112 : 12.6119389447168 : JumpStart); (8.68392556509888 : 12.7297900749146 : JumpEnd); (8.8125 : 12.8583645098157); (8.8125 : 14.7079735397135); (9 : 14.7079735397135)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/WebHocThemDataContext/KhoaHoc/KhoaHoc_Lop" />
+      <nodes>
+        <classShapeMoniker Id="58a1ee3a-cdde-4a45-99ed-9d7c3d83f072" />
+        <classShapeMoniker Id="84c4218e-735a-46fe-bedd-1fe74119d92c" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.5 : 14.9616870896935); (5.625 : 15.0866870896935); (5.625 : 15.7804996744792); (8.625 : 15.7804996744792); (9 : 15.4054996744792)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/WebHocThemDataContext/User/User_Lop" />
+      <nodes>
+        <classShapeMoniker Id="e9c84d95-4b64-46ad-ab07-2e94cd07dfdd" />
+        <classShapeMoniker Id="84c4218e-735a-46fe-bedd-1fe74119d92c" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.75 : 16.9719962565104); (3.25 : 16.9719962565104); (3.25 : 15.4054996744792); (8.5 : 15.4054996744792); (8.5 : 12.4054996744792); (10.031252 : 12.4054996744792); (10.031252 : 12.0304996744792)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/WebHocThemDataContext/MonHoc/MonHoc_KyThi" />
+      <nodes>
+        <classShapeMoniker Id="06f50ea7-6d49-49d6-b68d-2e0d48711375" />
+        <classShapeMoniker Id="a6527d6a-e74b-4709-901f-f8bb585ee425" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.75 : 16.6109981282552); (3.16666666666667 : 16.6109981282552 : JumpStart); (3.33333333333333 : 16.6109981282552 : JumpEnd); (3.5 : 16.6109981282552)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/WebHocThemDataContext/MonHoc/MonHoc_Level" />
+      <nodes>
+        <classShapeMoniker Id="06f50ea7-6d49-49d6-b68d-2e0d48711375" />
+        <classShapeMoniker Id="cd796904-88fd-48a2-85b0-bce9e3863727" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(11 : 13.25); (11.375 : 12.875); (11.375 : 11.2027498372396); (11.5416666666667 : 11.2027498372396 : JumpStart); (11.7083333333333 : 11.2027498372396 : JumpEnd); (11.75 : 11.2027498372396)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/WebHocThemDataContext/Lop/Lop_PhieuDangKy" />
+      <nodes>
+        <classShapeMoniker Id="84c4218e-735a-46fe-bedd-1fe74119d92c" />
+        <classShapeMoniker Id="216b234e-26f5-4345-bd86-55c4393b556a" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(11 : 8.06814697265625); (12.75 : 8.06814697265625); (12.75 : 10.125)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/WebHocThemDataContext/BienLai/BienLai_PhieuDangKy" />
+      <nodes>
+        <classShapeMoniker Id="bb56584a-c087-44a2-a9ec-231e53d2b234" />
+        <classShapeMoniker Id="216b234e-26f5-4345-bd86-55c4393b556a" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.5 : 13.0332223548678); (5.65822235486779 : 12.875); (5.97916666666667 : 12.875 : JumpStart); (6.14583333333333 : 12.875 : JumpEnd); (8.41666666666667 : 12.875 : JumpStart); (8.70833333333333 : 12.875 : JumpEnd); (11.5416666666667 : 12.875 : JumpStart); (11.7083333333333 : 12.875 : JumpEnd); (12.75 : 12.875); (12.75 : 12.2804996744792)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/WebHocThemDataContext/User/User_PhieuDangKy" />
+      <nodes>
+        <classShapeMoniker Id="e9c84d95-4b64-46ad-ab07-2e94cd07dfdd" />
+        <classShapeMoniker Id="216b234e-26f5-4345-bd86-55c4393b556a" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(13.75 : 11.1642976888021); (14.5 : 11.1642976888021)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/WebHocThemDataContext/PhieuDangKy/PhieuDangKy_PhieuDanhGia" />
+      <nodes>
+        <classShapeMoniker Id="216b234e-26f5-4345-bd86-55c4393b556a" />
+        <classShapeMoniker Id="7b2a3d9c-09c6-4628-9dad-c1f8e472bf44" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(11 : 17.3469962565104); (12.75 : 17.3469962565104); (12.75 : 15.0785953776042)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/WebHocThemDataContext/Ca/Ca_ThoiKhoaBieu" />
+      <nodes>
+        <classShapeMoniker Id="c67974f0-e7c3-4a33-a4a8-60c29650295d" />
+        <classShapeMoniker Id="7b3dbeda-21ae-4918-ae66-7572a5fcba7f" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(8.25 : 7.94074425651042); (8.75 : 7.94074425651042); (8.75 : 9.0112939453125); (8.79166666666667 : 9.0112939453125 : JumpStart); (8.95833333333333 : 9.0112939453125 : JumpEnd); (11.5 : 9.0112939453125); (11.5 : 13.125); (11.5416666666667 : 13.125 : JumpStart); (11.7083333333333 : 13.125 : JumpEnd); (12.75 : 13.125); (12.75 : 13.5)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/WebHocThemDataContext/DiaDiem/DiaDiem_ThoiKhoaBieu" />
+      <nodes>
+        <classShapeMoniker Id="3ae66f09-c3d4-414a-b534-bd7088b84f78" />
+        <classShapeMoniker Id="7b3dbeda-21ae-4918-ae66-7572a5fcba7f" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(11 : 14.2892976888021); (11.75 : 14.2892976888021)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/WebHocThemDataContext/Lop/Lop_ThoiKhoaBieu" />
+      <nodes>
+        <classShapeMoniker Id="84c4218e-735a-46fe-bedd-1fe74119d92c" />
+        <classShapeMoniker Id="7b3dbeda-21ae-4918-ae66-7572a5fcba7f" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(8.25 : 8.25486838476563); (8.875 : 8.25486838476563); (8.875 : 9.2612939453125); (11.625 : 9.2612939453125); (11.625 : 13.25); (12.218748 : 13.25); (12.218748 : 13.5)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/WebHocThemDataContext/DiaDiem/DiaDiem_ThoiKhoaBieu1" />
+      <nodes>
+        <classShapeMoniker Id="3ae66f09-c3d4-414a-b534-bd7088b84f78" />
+        <classShapeMoniker Id="7b3dbeda-21ae-4918-ae66-7572a5fcba7f" />
+      </nodes>
+    </associationConnector>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

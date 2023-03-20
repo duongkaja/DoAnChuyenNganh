@@ -1,0 +1,518 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="WebHocThem.Master.cs" Inherits="WebHocThem.WebHocThem" %>
+
+
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+
+    <meta charset="utf-8">
+    <title>Cở sở Giáo dục Luyện thi Tổng hợp Online | DHH CENTER</title>
+    <meta property="og:site_name" content="Anh Ngữ Ms Hoa" />
+    <meta name="viewport" content="width=device-width initial-scale=1">
+    <meta name="keyword" content="luyen thi toeic, hoc toeic, học toeic online, trung tâm luyện thi TOEIC, ms hoa toeic, ms hoa" />
+    <meta name="description" content="Trung tâm luyện thi TOEIC số 1 Việt Nam với hệ thống 23 cơ sở học TOEIC tại Hà Nội, TP.HCM, Đà Nẵng, Hải Phòng.. Địa chỉ học TOEIC Online miễn phí ☝☝ Anh ngữ Ms Hoa TOEIC
+" />
+    <meta property="og:image" content="https://www.anhngumshoa.com/theme/frontend/default/images/share_social.jpg" />
+    <meta property="og:title" content="Trung Tâm Luyện thi TOEIC, TOEIC Online | Anh ngữ Ms Hoa" />
+    <meta property="og:description" content="Trung tâm luyện thi TOEIC số 1 Việt Nam với hệ thống 23 cơ sở học TOEIC tại Hà Nội, TP.HCM, Đà Nẵng, Hải Phòng.. Địa chỉ học TOEIC Online miễn phí ☝☝ Anh ngữ Ms Hoa TOEIC
+" />
+    <meta property="og:url" content="https://www.anhngumshoa.com/" />
+    <meta http-equiv="Cache-control" content="private, max-age=60, stale-while-revalidate=6, stale-if-error=864000">
+    <link rel="shortcut icon" type="image/x-icon" href="https://www.anhngumshoa.com/theme/frontend/default/images/favicon.ico">
+    <link rel="canonical" href="https://www.anhngumshoa.com/" />
+    <link rel="stylesheet" href="https://www.anhngumshoa.com/theme/frontend/default/new/css/style.css?v3">
+
+
+    <style type="text/css">
+        .lotrinh .row div {
+            padding: 20px;
+            text-transform: uppercase;
+            background-color: #C4C4C4;
+            color: #fff;
+        }
+
+            .lotrinh .row div.active {
+                background-color: #CF1F25;
+            }
+
+        .section-title {
+            color: #165dc3;
+        }
+    </style>
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-128347264-1" type="79f7555a27ad8a2cc2b81bb6-text/javascript"></script>
+    <script type="79f7555a27ad8a2cc2b81bb6-text/javascript">
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-128347264-1');
+    </script>
+    <script type="79f7555a27ad8a2cc2b81bb6-text/javascript">(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-M4NP4ND');</script>
+
+    <meta name="p:domain_verify" content="d36225ae193f15db00f59b05eaa9285f" />
+    <style type="text/css">
+        .block_timer {
+            display: none;
+        }
+
+        #news_detail_content {
+            padding: 5px 15px;
+            text-align: justify;
+        }
+
+            #news_detail_content p {
+                line-height: 1.8em;
+            }
+
+                #news_detail_content p:first-child {
+                    font-size: 16px;
+                }
+
+            #news_detail_content ul, #news_detail_content li {
+                line-height: 2em;
+            }
+    </style>
+    <link rel="manifest" href="https://www.anhngumshoa.com/manifest.json" />
+    <script src="https://cdn.onesignal.com/sdks/OneSignalSDK.js" async="" type="79f7555a27ad8a2cc2b81bb6-text/javascript"></script>
+    <script type="79f7555a27ad8a2cc2b81bb6-text/javascript">
+  var OneSignal = window.OneSignal || [];
+  OneSignal.push(function() {
+    OneSignal.init({
+      appId: "8fe9fccd-5160-4d74-bcc2-aa57592cce39",
+    });
+  });
+    </script>
+    <script type="79f7555a27ad8a2cc2b81bb6-text/javascript">
+  !function(f,b,e,v,n,t,s)
+  {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+  n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+  if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+  n.queue=[];t=b.createElement(e);t.async=!0;
+  t.src=v;s=b.getElementsByTagName(e)[0];
+  s.parentNode.insertBefore(t,s)}(window, document,'script',
+  'https://connect.facebook.net/en_US/fbevents.js');
+  fbq('init', '1054293078007195');
+  fbq('track', 'PageView');
+    </script>
+    <noscript>
+        <img height="1" width="1" style="display: none"
+            src="https://www.facebook.com/tr?id=1054293078007195&ev=PageView&noscript=1" />
+    </noscript>
+
+
+    <script type="79f7555a27ad8a2cc2b81bb6-text/javascript">
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window,document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+ fbq('init', '660105501004281'); 
+fbq('track', 'PageView');
+    </script>
+    <noscript>
+        <img height="1" width="1"
+            src="https://www.facebook.com/tr?id=660105501004281&ev=PageView
+&noscript=1" />
+    </noscript>
+
+
+    <div id="fb-root"></div>
+    <script type="79f7555a27ad8a2cc2b81bb6-text/javascript">
+        window.fbAsyncInit = function() {
+          FB.init({
+            xfbml            : true,
+            version          : 'v7.0'
+          });
+        };
+
+        (function(d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+        js = d.createElement(s); js.id = id;
+        js.src = 'https://connect.facebook.net/vi_VN/sdk/xfbml.customerchat.js';
+        fjs.parentNode.insertBefore(js, fjs);
+      }(document, 'script', 'facebook-jssdk'));</script>
+
+    <div class="fb-customerchat" attribution="setup_tool" page_id="266324126761796" theme_color="#fa3c4c">
+    </div>
+</head>
+<body>
+    <form  class="cd-form" id="formmaster" runat="server">
+        <div class="page page-home">
+            <header class="header header-headroom" id="header" data-plugin="headroom" data-options='{"offset":100,"tolerance":5}'>
+                <div class="header-top">
+                    <div class="container">
+                        <button class="navbar-toggle hamburger hamburger--slider d-lg-none" id="navbar-toggle">
+                            <span class="hamburger-box d-block">
+                                <span class="hamburger-inner"></span>
+                            </span>
+                        </button>
+                        <a class="header-logo" href="/">
+                            <img class="header-logo-img" src="images\LOGO.png" alt="">
+                        </a>
+                        <div class="header-hotline hotline d-none d-lg-flex">
+                            <a class="hotline-item" href="tel:0356986186">
+                                <span class="hotline-icon">
+                                    <svg class="iconsvg-phone">
+                                        <use xlink:href="https://www.anhngumshoa.com/theme/frontend/default/new/images/sprite.svg#phone"></use>
+                                    </svg>
+                                </span>
+                                <span class="d-none d-xl-inline ms-2">0356 986 186</span>
+                            </a>
+                            <a class="hotline-item" href="https://www.anhngumshoa.com/cdn-cgi/l/email-protection#9afbf4f2f4fdeff7e9f2f5fbdafdf7fbf3f6b4f9f5f7">
+                                <span class="hotline-icon">
+                                    <svg class="iconsvg-mail">
+                                        <use xlink:href="https://www.anhngumshoa.com/theme/frontend/default/new/images/sprite.svg#mail"></use>
+                                    </svg>
+                                </span>
+                                <span class="d-none d-xl-inline ms-2">duonghiep131@gmail.com</span>
+                            </a>
+                        </div>
+                        <div class="search header-search search-simple search-pill ms-auto me-3 d-none d-lg-block">
+                            <div class="input-group">
+                                <form method="GET" action="/tim-kiem.html">
+                                    <input class="form-control" name="keyword" id="inp_keyword" placeholder="Tìm kiếm" />
+
+                                </form>
+                            </div>
+                        </div>
+
+                        <asp:LoginView runat="server" ViewStateMode="Disabled">
+                        <AnonymousTemplate>
+                            <div class="header-btn-group">
+                            <a class="btn btn-primary-light text-primary" role="button" href="Login.aspx?url=~/">Đăng nhập</a>
+                            <a class="btn btn-primary d-none d-lg-inline-flex" href="Register.aspx">Đăng ký</a>
+                            </div>
+                        </AnonymousTemplate>
+                        <LoggedInTemplate>
+                            
+                                    <a class="btn btn-primary d-none d-lg-inline-flex" role="button" runat="server" href="Manage.aspx" title="Manage account"><%:Context.User.Identity.GetUserName()%></a>
+                                
+                                
+                                    
+                                    <a class="btn btn-primary-light text-primary" role="button" <asp:LoginStatus runat="server" LogoutAction="Redirect" LogoutText="Log off" LogoutPageUrl="~/" OnLoggingOut="Unnamed_LoggingOut" /></a>
+                                       
+                        </LoggedInTemplate>
+                    </asp:LoginView>
+
+                        
+                    </div>
+                </div>
+                <nav class="header-navbar navbar navbar-expand-lg navbar-flat" id="navbar">
+                    <div class="container">
+                        <div class="collapse navbar-collapse" id="navbar-collapse">
+                            <div class="navbar-top d-lg-none">
+                                <button class="navbar-close" id="navbar-close">
+                                    <i class="icont-close"></i>
+                                </button>
+                            </div>
+                            <div class="navbar-scroll">
+                                <div class="mx-3 d-lg-none">
+                                    <div class="search header-search search-simple search-pill mw-100">
+                                        <div class="input-group">
+                                            <input class="form-control" placeholder="Tìm kiếm" />
+                                            <button class="btn btn-primary" type="button">
+                                                <svg class="iconsvg-search">
+                                                    <use xlink:href="https://www.anhngumshoa.com/theme/frontend/default/new/images/sprite.svg#search"></use>
+                                                </svg>
+                                                <span class="visually-hidden">Tìm kiếm</span>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <ul class="navbar-nav navbar-nav-hover navbar-nav-effect" id="navbar-nav">
+                                    
+                                    <li class="nav-item dropdown">
+                                        <a class="nav-link dropdown-toggle" href="GiangVien.aspx">Đội ngũ Đào Tạo</a>
+                                        <div class="dropdown-menu">
+                                            <div class="dropdown">
+                                                <a class="dropdown-item" href="GiangVien.aspx">Đội ngũ Giảng Viên</a>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="nav-item dropdown">
+                                        <a class="nav-link dropdown-toggle" href="#">Học viên</a>
+                                        <div class="dropdown-menu">
+                                            <div class="dropdown">
+                                                <a class="dropdown-item" href="/tin-tuc/vinh-danh-hoc-vien-toeic-list-read-c3347.html">Vinh danh Học viên điểm cao</a>
+                                            </div>
+                                            <div class="dropdown">
+                                                <a class="dropdown-item" href="/tin-tuc/cam-nhan-cua-hoc-vien-c3346.html">Cảm nhận học viên</a>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="nav-item dropdown">
+                                        <a class="nav-link dropdown-toggle" href="KhoaHoc.aspx">Khóa học</a>
+                                        <div class="dropdown-menu">
+                                            <div class="dropdown">
+                                                <a class="dropdown-item" href="KhoaHoc.aspx">Mục tiêu 450 - 550+ </a>
+                                            </div>
+                                            <div class="dropdown">
+                                                <a class="dropdown-item" href="/tin-tuc/khoa-toeic-650-37803.html">Mục tiêu 650 - 700+ </a>
+                                            </div>
+                                            <div class="dropdown">
+                                                <a class="dropdown-item" href="/tin-tuc/khoa-800-toeic-tron-doi-cam-ket-dau-ra-100-37536.html">Mục tiêu 800+ </a>
+                                            </div>
+                                            <div class="dropdown">
+                                                <a class="dropdown-item" href="/tin-tuc/khoa-toeic-4-ky-nang-a-plus-37805.html">Lộ trình  4 kỹ năng A+</a>
+                                            </div>
+                                            <div class="dropdown">
+                                                <a class="dropdown-item" href="/tin-tuc/khoa-toeic-4-ky-nang-b-plus-37806.html">Lộ trình  4 kỹ năng B+</a>
+                                            </div>
+                                            <div class="dropdown">
+                                                <a class="dropdown-item" href="/tin-tuc/khoa-luyen-de-toeic-36763.html">Khóa  cấp tốc 1-1</a>
+                                            </div>
+                                            <div class="dropdown">
+                                                <a class="dropdown-item" href="/tin-tuc/khoa-luyen-thi-toeic-cap-toc-theo-yeu-cau-cua-hoc-vien-35008.html">Khóa  cấp tốc theo yêu cầu</a>
+                                            </div>
+                                            <div class="dropdown">
+                                                <a class="dropdown-item" href="https://www.anhngumshoa.com/tin-tuc/khoa-hoc-toeic-online-truc-tuyen-size-lop-nho-38026.html">Khóa online trực tuyến</a>
+                                            </div>
+                                            <div class="dropdown">
+                                                <a class="dropdown-item" href="https://www.anhngumshoa.com/tin-tuc/khoa-hoc-tieng-anh-doanh-nghiep-anh-ngu-ms-hoa-35763.html">Tiếng Anh  </a>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="nav-item dropdown">
+                                        <a class="nav-link dropdown-toggle" href="LopHoc.aspx">Lớp học</a>
+                                        <div class="dropdown-menu">
+                                            <div class="dropdown">
+                                                <a class="dropdown-item" href="LopHoc.aspx">Tuyệt chiêu đọc hiểu </a>
+                                            </div>
+                                            <div class="dropdown">
+                                                <a class="dropdown-item" href="/tin-tuc/hoc-600-tu-vung-toeic-barrons-sieu-toc-full-9-video-pdf-38206.html"> Từ vựng Barron's </a>
+                                            </div>
+                                            <div class="dropdown">
+                                                <a class="dropdown-item" href="/tin-tuc/khoa-hoc-toeic-format-moi-ngu-phap-toeic-nang-cao-38179.html">Ngữ pháp TOEIC nâng cao</a>
+                                            </div>
+                                            <div class="dropdown">
+                                                <a class="dropdown-item" href="/tin-tuc/10-bo-chua-de-toeic-mien-phi-anh-ngu-ms-hoa-36975.html">Giải đề TOEIC miễn phí</a>
+                                            </div>
+                                            <div class="dropdown">
+                                                <a class="dropdown-item" href="/tin-tuc/thong-tin-chung-ve-toeic-c3336.html">Blog tài liệu</a>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="nav-item dropdown">
+                                        <a class="nav-link dropdown-toggle" href="ThoiKhoaBieu.aspx?id=<%:Context.User.Identity.GetUserName()%>">Thời khóa biểu</a>
+                                        <div class="dropdown-menu">
+                                            <div class="dropdown">
+                                                <a class="dropdown-item" href="https://www.anhngumshoa.com/test/mini-test-c3409.html">Mini Test</a>
+                                            </div>
+                                            <div class="dropdown">
+                                                <a class="dropdown-item" href="https://www.anhngumshoa.com/test/full-test-c3411.html">Full Test</a>
+                                            </div>
+                                            <div class="dropdown">
+                                                <a class="dropdown-item" href="https://www.anhngumshoa.com/test/skill-test-c3410.html">Skill Test</a>
+                                            </div>
+                                            <div class="dropdown">
+                                                <a class="dropdown-item" href="https://www.anhngumshoa.com/test/speaking-c3480.html">Speaking Test</a>
+                                            </div>
+                                            <div class="dropdown">
+                                                <a class="dropdown-item" href="https://www.anhngumshoa.com/test/writing-c3463.html">Writing Test</a>
+                                            </div>
+                                            <div class="dropdown">
+                                                <a class="dropdown-item" href="#">Video bài giảng</a>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="nav-item dropdown">
+                                        <a class="nav-link dropdown-toggle" href="#">Yêu cầu hỗ trợ</a>
+                                        <div class="dropdown-menu">
+                                            <div class="dropdown">
+                                                <a class="dropdown-item" href="NangCapTaiKhoan.aspx">Nâng cấp tài khoản</a>
+                                            </div>
+                                            <div class="dropdown">
+                                                <a class="dropdown-item" href="#">Xác nhận học phí</a>
+                                            </div>
+          
+                                            <div class="dropdown">
+                                                <a class="dropdown-item" href="#">Tuyển dụng</a>
+                                            </div>
+                                        </div>
+                                    </li>
+
+                                </ul>
+
+                                <div class="d-lg-none fs-sm px-3 mb-3">
+                                    <hr class="divider mt-2">
+                                    <h6>DHH CENTER - Cơ sở giáo dục số 1 Việt Nam</h6>
+                                    <p class="text-black-50 fs-xs text-center mb-0">© 2021. Trực thuộc công ty cổ phần giáo dục và đào tạo  Việt Nam</p>
+                                </div>
+                                <div class="navbar-bottom d-lg-none">
+                                    <div class="navbar-hotline hotline">
+                                        <a class="hotline-item" href="tel:0903411666">
+                                            <span class="hotline-icon">
+                                                <svg class="iconsvg-phone">
+                                                    <use xlink:href="https://www.anhngumshoa.com/theme/frontend/default/new/images/sprite.svg#phone"></use>
+                                                </svg>
+                                            </span>
+                                            <span class="ms-2">0356 986 186</span>
+                                        </a>
+                                        <a class="hotline-item" href="https://www.anhngumshoa.com/cdn-cgi/l/email-protection#0a677962656b7e656f63694a63676b7a246f6e7f247c64">
+                                            <span class="hotline-icon">
+                                                <svg class="iconsvg-mail">
+                                                    <use xlink:href="https://www.anhngumshoa.com/theme/frontend/default/new/images/sprite.svg#mail"></use>
+                                                </svg>
+                                            </span>
+                                            <span class="ms-2">duonghiep131@gmail.com</span>
+                                        </a>
+                                    </div> 
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </nav>
+            </header>
+            <div class="page-main">
+                <asp:ContentPlaceHolder ID="ContentPlaceHolderWebHocThem" runat="server">
+                </asp:ContentPlaceHolder>
+            </div>
+            <footer class="footer" id="footer">
+                <div class="footer-main py-5">
+                    <div class="container">
+                        <div class="row gy-5 g-md-4 align-items-start lh-lg mb-5">
+                            <div class="col-12">
+                                <a class="footer-logo" href="https://www.anhngumshoa.com">
+                                    <img loading="lazy" class="img-fluid" src="images/LOGO.png" alt="">
+                                </a>
+                            </div>
+                            <div class="col-md-6">
+                                <h5>Về DHH CENTER</h5>
+                                <p class="mb-2 pe-xl-2">
+                                    Trên con đường phát triển,DHH CENTER phấn đấu trở thành đơn vị đi đầu trong lĩnh vực đào tạo toàn diện cho trẻ em và thanh thiếu niên; trở thành thương hiệu “top of mind” trong lòng học viên khi họ có nhu cầu nâng cao kiến thức các môn học. Xa hơn nữa là trở thành ngôi sao sáng trên bản đồ giáo dục Việt Nam.
+                                </p>
+                            </div>
+                            <div class="col-md-6 d-grid gap-5 gap-md-3">
+                                <div>
+                                    <h5>Thông tin liên hệ</h5>
+                                    <p class="mb-0">
+                                        <strong>DHH CENTER - Cơ sở giáo dục số 1 Việt Nam</strong>
+                                        <br>
+                                        Hotline: <a href="tel:0344362989">0344362989</a>
+                                        <br>
+                                        Email: <a href="https://myaccount.google.com/?utm_source=sign_in_no_continue">duonghovo@gmail.com</a>
+                                    </p>
+                                </div>
+                                <div class="social">
+                                    <a class="social-item" href="https://www.facebook.com/nhanha.duongvayne">
+                                        <img loading="lazy" class="img-fluid social-icon" src="https://www.anhngumshoa.com/theme/frontend/default/new/images/icons/facebook-circle.svg" alt="">
+                                    </a>
+                                    <a class="social-item" href="https://www.youtube.com/channel/UCx3UfaO1ltDv4mlCkWS9f_g">
+                                        <img loading="lazy" class="img-fluid social-icon" src="https://www.anhngumshoa.com/theme/frontend/default/new/images/icons/youtube-circle.svg" alt="">
+                                    </a>
+                                    <a class="social-item" href="https://www.tiktok.com/@merlin_rodlyn?lang=enN">
+                                        <img loading="lazy" class="img-fluid social-icon" src="https://www.anhngumshoa.com/theme/frontend/default/new/images/icons/tiktok-circle.svg" alt="">
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                      
+                    </div>
+                </div>
+            </footer>
+
+        </div>
+        <div style="display: none;">01:33:27</div>
+
+        <noscript>
+            <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-M4NP4ND"
+                height="0" width="0" style="display: none; visibility: hidden"></iframe>
+        </noscript>
+        <style>
+            #courseFree img {
+                max-width: 100% !important;
+                height: auto !important;
+            }
+        </style>
+
+        
+        <script type="79f7555a27ad8a2cc2b81bb6-text/javascript" src="https://www.anhngumshoa.com/theme/frontend/default/js/jquery.min.js"></script>
+        <script src="https://www.anhngumshoa.com/theme/frontend/default/new/js/vendor/bootstrap.bundle.min.js" type="79f7555a27ad8a2cc2b81bb6-text/javascript"></script>
+        <script src="https://www.anhngumshoa.com/theme/frontend/default/new/js/vendor/swiper.min.js" type="79f7555a27ad8a2cc2b81bb6-text/javascript"></script>
+        <script src="https://www.anhngumshoa.com/theme/frontend/default/new/js/vendor/headroom.min.js" type="79f7555a27ad8a2cc2b81bb6-text/javascript"></script>
+        <script src="https://www.anhngumshoa.com/theme/frontend/default/new/js/vendor/perfect-scrollbar.min.js" type="79f7555a27ad8a2cc2b81bb6-text/javascript"></script>
+        <script src="https://www.anhngumshoa.com/theme/frontend/default/new/js/vendor/stickybits.min.js" type="79f7555a27ad8a2cc2b81bb6-text/javascript"></script>
+        <script src="https://www.anhngumshoa.com/theme/frontend/default/new/js/vendor/smooth-scroll.min.js" type="79f7555a27ad8a2cc2b81bb6-text/javascript"></script>
+        <script src="https://www.anhngumshoa.com/theme/frontend/default/new/js/main.js" type="79f7555a27ad8a2cc2b81bb6-text/javascript"></script>
+        <script src="https://www.google.com/recaptcha/api.js?render=6LfndKAcAAAAAHcpMd3h2t8lNLQT-gsn65b0SXSC" type="79f7555a27ad8a2cc2b81bb6-text/javascript"></script>
+        <script type="79f7555a27ad8a2cc2b81bb6-text/javascript">
+            $(document).ready(function(){
+                $('#tuvan_form').submit(function(e){
+                    var self = $(this);
+                    var self_submit = $("input[type=submit]",self);
+                    self_submit.css('background-color: red');
+
+                    self.find(".has-error").removeClass("has-error");
+                    self.find(".error").remove();
+                    e.preventDefault(); 
+
+                    $('#tuvan_submit').attr('disabled', true);
+                    $.ajax({
+                        type: 'post',
+                        dataType : 'json',
+                        url: $(this).attr("action"),
+                        data: $(this).serializeArray(),
+                        success: function (respon) {
+                            if(respon.status == "success"){
+                                // redirect('/contact/success');
+                                $('#tuvan_form')[0].reset();
+                                alert('Đăng ký thành công');
+                            } else {
+                                alert(respon.message);
+                            }
+                            $('#tuvan_submit').prop('disabled', false);
+                        },
+                        error: function(respon,code) {
+                            
+                        }
+                    });   
+                });
+
+                $(".button_lotrinh div").click(function(){
+                    $(".button_lotrinh div").removeClass('active');
+                    $("#lotrinh2").hide(); $("#lotrinh4").hide();
+                    $(this).addClass('active');
+                    var id = $(this).data('id');
+                    $("#lotrinh"+id).show();
+                });
+
+                $(".thumbnail-video").click(function() {
+                    var str = $(this).find('img').data('video');
+                    if (str == "") {
+                        return false;
+                    }
+                    var res = str.split("=");
+                    var embeddedUrl = "https://www.youtube.com/embed/" + res[1] + "?autoplay=1";
+                    $(this).html('<iframe src="' + embeddedUrl + '" allowfullscreen="" frameborder="0" width="100%" height="100%" style="min-height: 350px" allow="autoplay"></iframe>'
+                    );
+                });
+
+                if (! localStorage.getItem("showCourseFree")) {
+                    var duration = $('#courseFree').attr('data-duration');
+                    setTimeout(function () {
+                        $('#courseFree').modal('show');
+                        localStorage.setItem("showCourseFree", '1');
+                    }, parseInt(duration)*1000);
+                }
+            })
+        </script>
+        <script src="https://www.anhngumshoa.com/cdn-cgi/scripts/7d0fa10a/cloudflare-static/rocket-loader.min.js" data-cf-settings="79f7555a27ad8a2cc2b81bb6-|49" defer=""></script>
+        <script defer src="https://static.cloudflareinsights.com/beacon.min.js/vaafb692b2aea4879b33c060e79fe94621666317369993" integrity="sha512-0ahDYl866UMhKuYcW078ScMalXqtFJggm7TmlUtp0UlD4eQk0Ixfnm5ykXKvGJNFjLMoortdseTfsRT8oCfgGA==" data-cf-beacon='{"rayId":"768ff5c64a010977","version":"2022.11.0","r":1,"token":"f75c0c1144fc4f8ab230858154e10424","si":100}' crossorigin="anonymous"></script>
+
+    </form>
+</body>
+</html>

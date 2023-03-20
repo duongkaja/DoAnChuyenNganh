@@ -1,0 +1,313 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="DBWebHocThem" Class="WebHocThemDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=DESKTOP-9ILOSIP\SQLEXPRESS;Initial Catalog=DBWebHocThem;Integrated Security=True" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="DBWebHocThemConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.AspNetRoles" Member="AspNetRoles">
+    <Type Name="AspNetRole">
+      <Column Name="Id" Type="System.String" DbType="NVarChar(128) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(256) NOT NULL" CanBeNull="false" />
+      <Association Name="AspNetRole_AspNetUserRole" Member="AspNetUserRoles" ThisKey="Id" OtherKey="RoleId" Type="AspNetUserRole" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Users" Member="Users">
+    <Type Name="User">
+      <Column Name="ID" Type="System.String" DbType="NVarChar(128) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="SDT" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="TenUser" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="DiaChi" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="HinhAnh" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="GioiTinh" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Association Name="User_DiemThi" Member="DiemThis" ThisKey="ID" OtherKey="Users" Type="DiemThi" />
+      <Association Name="User_KhoaHoc" Member="KhoaHocs" ThisKey="ID" OtherKey="GiaoVien1" Type="KhoaHoc" />
+      <Association Name="User_Lop" Member="Lops" ThisKey="ID" OtherKey="GiaoVien" Type="Lop" />
+      <Association Name="User_PhieuDangKy" Member="PhieuDangKies" ThisKey="ID" OtherKey="Users" Type="PhieuDangKy" />
+      <Association Name="AspNetUser_User" Member="AspNetUser" ThisKey="ID" OtherKey="UserName" Type="AspNetUser" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.AspNetUserClaims" Member="AspNetUserClaims">
+    <Type Name="AspNetUserClaim">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="UserId" Type="System.String" DbType="NVarChar(128) NOT NULL" CanBeNull="false" />
+      <Column Name="ClaimType" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="ClaimValue" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Association Name="AspNetUser_AspNetUserClaim" Member="AspNetUser" ThisKey="UserId" OtherKey="UserName" Type="AspNetUser" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.AspNetUserLogins" Member="AspNetUserLogins">
+    <Type Name="AspNetUserLogin">
+      <Column Name="LoginProvider" Type="System.String" DbType="NVarChar(128) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="ProviderKey" Type="System.String" DbType="NVarChar(128) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="UserId" Type="System.String" DbType="NVarChar(128) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Association Name="AspNetUser_AspNetUserLogin" Member="AspNetUser" ThisKey="UserId" OtherKey="UserName" Type="AspNetUser" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.AspNetUserRoles" Member="AspNetUserRoles">
+    <Type Name="AspNetUserRole">
+      <Column Name="UserId" Type="System.String" DbType="NVarChar(128) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="RoleId" Type="System.String" DbType="NVarChar(128) NOT NULL" CanBeNull="false" />
+      <Association Name="AspNetRole_AspNetUserRole" Member="AspNetRole" ThisKey="RoleId" OtherKey="Id" Type="AspNetRole" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+      <Association Name="AspNetUser_AspNetUserRole" Member="AspNetUser" ThisKey="UserId" OtherKey="UserName" Type="AspNetUser" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.AspNetUsers" Member="AspNetUsers">
+    <Type Name="AspNetUser">
+      <Column Name="Id" Type="System.String" DbType="NVarChar(128)" CanBeNull="true" />
+      <Column Name="Email" Type="System.String" DbType="NVarChar(128) NOT NULL" CanBeNull="false" />
+      <Column Name="EmailConfirmed" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="PasswordHash" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="SecurityStamp" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="PhoneNumber" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="PhoneNumberConfirmed" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="TwoFactorEnabled" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="LockoutEndDateUtc" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="LockoutEnabled" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="AccessFailedCount" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="UserName" Type="System.String" DbType="NVarChar(128) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Association Name="AspNetUser_User" Member="User" ThisKey="UserName" OtherKey="ID" Type="User" Cardinality="One" />
+      <Association Name="AspNetUser_AspNetUserClaim" Member="AspNetUserClaims" ThisKey="UserName" OtherKey="UserId" Type="AspNetUserClaim" />
+      <Association Name="AspNetUser_AspNetUserLogin" Member="AspNetUserLogins" ThisKey="UserName" OtherKey="UserId" Type="AspNetUserLogin" />
+      <Association Name="AspNetUser_AspNetUserRole" Member="AspNetUserRole" ThisKey="UserName" OtherKey="UserId" Type="AspNetUserRole" Cardinality="One" />
+    </Type>
+  </Table>
+  <Table Name="dbo.BienLai" Member="BienLais">
+    <Type Name="BienLai">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="SoTien" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="NoiDung" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Association Name="BienLai_PhieuDangKy" Member="PhieuDangKies" ThisKey="ID" OtherKey="BienLai" Type="PhieuDangKy" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Ca" Member="Cas">
+    <Type Name="Ca">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="ThongTinCa" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Association Name="Ca_ThoiKhoaBieu" Member="ThoiKhoaBieus" ThisKey="ID" OtherKey="Ca" Type="ThoiKhoaBieu" />
+    </Type>
+  </Table>
+  <Table Name="dbo.DiaDiem" Member="DiaDiems">
+    <Type Name="DiaDiem">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="TenDiaDiem" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Association Name="DiaDiem_KyThi" Member="KyThis" ThisKey="ID" OtherKey="DiaDiem" Type="KyThi" />
+      <Association Name="DiaDiem_ThoiKhoaBieu" Member="ThoiKhoaBieus" ThisKey="ID" OtherKey="DiaDiem" Type="ThoiKhoaBieu" />
+      <Association Name="DiaDiem_ThoiKhoaBieu1" Member="ThoiKhoaBieus1" ThisKey="ID" OtherKey="DiaDiem" Type="ThoiKhoaBieu" />
+    </Type>
+  </Table>
+  <Table Name="dbo.DiemThi" Member="DiemThis">
+    <Type Name="DiemThi">
+      <Column Name="KyThi" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="DiaDiem" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="MonThi" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Users" Type="System.String" DbType="NVarChar(128) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Diem" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Association Name="User_DiemThi" Member="User" ThisKey="Users" OtherKey="ID" Type="User" IsForeignKey="true" />
+      <Association Name="KyThi_DiemThi" Member="KyThi1" ThisKey="KyThi,DiaDiem,MonThi" OtherKey="ID,DiaDiem,MonThi" Type="KyThi" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.KhoaHoc" Member="KhoaHocs">
+    <Type Name="KhoaHoc">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="TenKhoaHoc" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="GiaoVien1" Type="System.String" DbType="NVarChar(128)" CanBeNull="true" />
+      <Column Name="MonHoc" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Levels" Type="System.Double" DbType="Float NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="NgayKhaiGiang" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="NgayKetThuc" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="SoBuoiHoc" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="HocPhi" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="HinhAnh" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Association Name="KhoaHoc_KyThi" Member="KyThis" ThisKey="ID,MonHoc,Levels" OtherKey="KhoaHoc,MonThi,Levels" Type="KyThi" />
+      <Association Name="KhoaHoc_Lop" Member="Lops" ThisKey="ID,MonHoc,Levels" OtherKey="KhoaHoc,MonHoc,Levels" Type="Lop" />
+      <Association Name="User_KhoaHoc" Member="User" ThisKey="GiaoVien1" OtherKey="ID" Type="User" IsForeignKey="true" />
+      <Association Name="Level_KhoaHoc" Member="Level" ThisKey="MonHoc,Levels" OtherKey="MonHoc,DiemTB" Type="Level" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.KyThi" Member="KyThis">
+    <Type Name="KyThi">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="TenKyThi" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="NgayThi" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="DiaDiem" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="MonThi" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Levels" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="KhoaHoc" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="KyThi_DiemThi" Member="DiemThis" ThisKey="ID,DiaDiem,MonThi" OtherKey="KyThi,DiaDiem,MonThi" Type="DiemThi" />
+      <Association Name="KhoaHoc_KyThi" Member="KhoaHoc1" ThisKey="KhoaHoc,MonThi,Levels" OtherKey="ID,MonHoc,Levels" Type="KhoaHoc" IsForeignKey="true" />
+      <Association Name="DiaDiem_KyThi" Member="DiaDiem1" ThisKey="DiaDiem" OtherKey="ID" Type="DiaDiem" IsForeignKey="true" />
+      <Association Name="MonHoc_KyThi" Member="MonHoc" ThisKey="MonThi" OtherKey="ID" Type="MonHoc" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Levels" Member="Levels">
+    <Type Name="Level">
+      <Column Name="TenLevels" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="MonHoc" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="DiemTB" Type="System.Double" DbType="Float NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Association Name="Level_KhoaHoc" Member="KhoaHocs" ThisKey="MonHoc,DiemTB" OtherKey="MonHoc,Levels" Type="KhoaHoc" />
+      <Association Name="MonHoc_Level" Member="MonHoc1" ThisKey="MonHoc" OtherKey="ID" Type="MonHoc" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Lop" Member="Lops">
+    <Type Name="Lop">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="TenLop" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="SoLuong" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="MonHoc" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Levels" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="KhoaHoc" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="GiaoVien" Type="System.String" DbType="NVarChar(128)" CanBeNull="true" />
+      <Association Name="Lop_PhieuDangKy" Member="PhieuDangKies" ThisKey="ID" OtherKey="Lop" Type="PhieuDangKy" />
+      <Association Name="Lop_ThoiKhoaBieu" Member="ThoiKhoaBieus" ThisKey="ID" OtherKey="LopHoc" Type="ThoiKhoaBieu" />
+      <Association Name="KhoaHoc_Lop" Member="KhoaHoc1" ThisKey="KhoaHoc,MonHoc,Levels" OtherKey="ID,MonHoc,Levels" Type="KhoaHoc" IsForeignKey="true" />
+      <Association Name="User_Lop" Member="User" ThisKey="GiaoVien" OtherKey="ID" Type="User" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.MonHoc" Member="MonHocs">
+    <Type Name="MonHoc">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="TenMonHoc" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Association Name="MonHoc_KyThi" Member="KyThis" ThisKey="ID" OtherKey="MonThi" Type="KyThi" />
+      <Association Name="MonHoc_Level" Member="Levels" ThisKey="ID" OtherKey="MonHoc" Type="Level" />
+    </Type>
+  </Table>
+  <Table Name="dbo.PhieuDangKy" Member="PhieuDangKies">
+    <Type Name="PhieuDangKy">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="BienLai" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Lop" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Users" Type="System.String" DbType="NVarChar(128)" CanBeNull="true" />
+      <Column Name="NoiDungDK" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="NgayDK" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="XacNhan" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Association Name="PhieuDangKy_PhieuDanhGia" Member="PhieuDanhGias" ThisKey="ID" OtherKey="PhieuDangKy" Type="PhieuDanhGia" />
+      <Association Name="Lop_PhieuDangKy" Member="Lop1" ThisKey="Lop" OtherKey="ID" Type="Lop" IsForeignKey="true" />
+      <Association Name="BienLai_PhieuDangKy" Member="BienLai1" ThisKey="BienLai" OtherKey="ID" Type="BienLai" IsForeignKey="true" />
+      <Association Name="User_PhieuDangKy" Member="User" ThisKey="Users" OtherKey="ID" Type="User" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.PhieuDanhGia" Member="PhieuDanhGias">
+    <Type Name="PhieuDanhGia">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="DiemDG" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="NoiDungDG" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="PhieuDangKy" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="PhieuDangKy_PhieuDanhGia" Member="PhieuDangKy1" ThisKey="PhieuDangKy" OtherKey="ID" Type="PhieuDangKy" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ThoiKhoaBieu" Member="ThoiKhoaBieus">
+    <Type Name="ThoiKhoaBieu">
+      <Column Name="ThoiGian" Type="System.DateTime" DbType="Date NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="LopHoc" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Ca" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="DiaDiem" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="Ca_ThoiKhoaBieu" Member="Ca1" ThisKey="Ca" OtherKey="ID" Type="Ca" IsForeignKey="true" />
+      <Association Name="DiaDiem_ThoiKhoaBieu" Member="DiaDiem1" ThisKey="DiaDiem" OtherKey="ID" Type="DiaDiem" IsForeignKey="true" />
+      <Association Name="Lop_ThoiKhoaBieu" Member="Lop" ThisKey="LopHoc" OtherKey="ID" Type="Lop" IsForeignKey="true" />
+      <Association Name="DiaDiem_ThoiKhoaBieu1" Member="DiaDiem2" ThisKey="DiaDiem" OtherKey="ID" Type="DiaDiem" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Function Name="dbo.P_GV1" Method="P_GV1">
+    <ElementType Name="P_GV1Result">
+      <Column Name="ID" Type="System.String" DbType="NVarChar(128) NOT NULL" CanBeNull="false" />
+      <Column Name="SDT" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="TenUser" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="DiaChi" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="HinhAnh" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="GioiTinh" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="SL" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.P_KH3" Method="P_KH3">
+    <ElementType Name="P_KH3Result">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="TenKhoaHoc" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="GiaoVien1" Type="System.String" DbType="NVarChar(128)" CanBeNull="true" />
+      <Column Name="MonHoc" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Levels" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Column Name="NgayKhaiGiang" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="NgayKetThuc" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="SoBuoiHoc" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="HocPhi" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="HinhAnh" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="SL" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.P_GV2" Method="P_GV2">
+    <ElementType Name="P_GV2Result">
+      <Column Name="ID" Type="System.String" DbType="NVarChar(128) NOT NULL" CanBeNull="false" />
+      <Column Name="SDT" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="TenUser" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="DiaChi" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="HinhAnh" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="GioiTinh" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="SL" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.P_GV3" Method="P_GV3">
+    <ElementType Name="P_GV3Result">
+      <Column Name="ID" Type="System.String" DbType="NVarChar(128) NOT NULL" CanBeNull="false" />
+      <Column Name="SDT" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="TenUser" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="DiaChi" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="HinhAnh" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="GioiTinh" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="SL" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.P_GV4" Method="P_GV4">
+    <ElementType Name="P_GV4Result">
+      <Column Name="ID" Type="System.String" DbType="NVarChar(128) NOT NULL" CanBeNull="false" />
+      <Column Name="SDT" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="TenUser" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="DiaChi" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="HinhAnh" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="GioiTinh" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="SL" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.P_KH1" Method="P_KH1">
+    <ElementType Name="P_KH1Result">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="TenKhoaHoc" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="GiaoVien1" Type="System.String" DbType="NVarChar(128)" CanBeNull="true" />
+      <Column Name="MonHoc" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Levels" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Column Name="NgayKhaiGiang" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="NgayKetThuc" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="SoBuoiHoc" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="HocPhi" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="HinhAnh" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="SL" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.P_KH2" Method="P_KH2">
+    <ElementType Name="P_KH2Result">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="TenKhoaHoc" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="GiaoVien1" Type="System.String" DbType="NVarChar(128)" CanBeNull="true" />
+      <Column Name="MonHoc" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Levels" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Column Name="NgayKhaiGiang" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="NgayKetThuc" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="SoBuoiHoc" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="HocPhi" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="HinhAnh" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="SL" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.P_PDK" Method="P_PDK">
+    <Parameter Name="BL" Parameter="bL" Type="System.Int32" DbType="Int" />
+    <Parameter Name="LOP" Parameter="lOP" Type="System.Int32" DbType="Int" />
+    <Parameter Name="ND" Parameter="nD" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="DATE" Parameter="dATE" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="USER" Parameter="uSER" Type="System.String" DbType="NVarChar(128)" />
+    <Parameter Name="OUT" Parameter="oUT" Type="System.Int32" DbType="Int" Direction="InOut" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.P_TKB" Method="P_TKB">
+    <Parameter Name="DATE" Parameter="dATE" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="LOP" Parameter="lOP" Type="System.Int32" DbType="Int" />
+    <Parameter Name="CA" Parameter="cA" Type="System.Int32" DbType="Int" />
+    <Parameter Name="DD" Parameter="dD" Type="System.Int32" DbType="Int" />
+    <Parameter Name="GV" Parameter="gV" Type="System.String" DbType="NVarChar(128)" />
+    <Parameter Name="OUT" Parameter="oUT" Type="System.Int32" DbType="Int" Direction="InOut" />
+    <Return Type="System.Int32" />
+  </Function>
+</Database>

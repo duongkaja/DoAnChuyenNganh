@@ -1,0 +1,443 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="DBAppWebHocThemModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="BienLai">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" />
+    <Property Name="SoTien" Type="Double" />
+    <Property Name="NoiDung" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="PhieuDangKies" Relationship="Self.FK_PhieuDangKy_BienLai" FromRole="BienLai" ToRole="PhieuDangKy" />
+  </EntityType>
+  <EntityType Name="DiemThi">
+    <Key>
+      <PropertyRef Name="NgayThi" />
+      <PropertyRef Name="MonThi" />
+      <PropertyRef Name="Users" />
+    </Key>
+    <Property Name="NgayThi" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="MonThi" Type="Int32" Nullable="false" />
+    <Property Name="Users" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Diem" Type="Double" />
+    <NavigationProperty Name="KyThi" Relationship="Self.FK_DiemThi_KyThi" FromRole="DiemThi" ToRole="KyThi" />
+    <NavigationProperty Name="User" Relationship="Self.FK_KetQua_HocSinh" FromRole="DiemThi" ToRole="Users" />
+  </EntityType>
+  <EntityType Name="KhoaHoc">
+    <Key>
+      <PropertyRef Name="ID" />
+      <PropertyRef Name="MonHoc" />
+      <PropertyRef Name="Levels" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" />
+    <Property Name="TenKhoaHoc" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="GiaoVien" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="MonHoc" Type="Int32" Nullable="false" />
+    <Property Name="Levels" Type="Double" Nullable="false" />
+    <Property Name="NgayKhaiGiang" Type="DateTime" Precision="0" />
+    <Property Name="NgayKetThuc" Type="DateTime" Precision="0" />
+    <Property Name="SoBuoiHoc" Type="Int32" />
+    <Property Name="HocPhi" Type="Double" />
+    <NavigationProperty Name="Level" Relationship="Self.FK_KhoaHoc_Levels" FromRole="KhoaHoc" ToRole="Levels" />
+    <NavigationProperty Name="ThoiGian" Relationship="Self.FK_KhoaHoc_QLThoiGian" FromRole="KhoaHoc" ToRole="ThoiGian" />
+    <NavigationProperty Name="User" Relationship="Self.FK_KhoaHoc_Users" FromRole="KhoaHoc" ToRole="Users" />
+    <NavigationProperty Name="Lops" Relationship="Self.FK_Lop_KhoaHoc" FromRole="KhoaHoc" ToRole="Lop" />
+  </EntityType>
+  <EntityType Name="KyThi">
+    <Key>
+      <PropertyRef Name="NgayThi" />
+      <PropertyRef Name="MonThi" />
+    </Key>
+    <Property Name="TenKyThi" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="NgayThi" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="PhongThi" Type="Int32" />
+    <Property Name="MonThi" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="DiemThis" Relationship="Self.FK_DiemThi_KyThi" FromRole="KyThi" ToRole="DiemThi" />
+    <NavigationProperty Name="MonHoc" Relationship="Self.FK_KyThi_MonHoc" FromRole="KyThi" ToRole="MonHoc" />
+    <NavigationProperty Name="Phong" Relationship="Self.FK_KyThi_PhongHoc" FromRole="KyThi" ToRole="Phong" />
+    <NavigationProperty Name="ThoiGian" Relationship="Self.FK_KyThi_QLThoiGian" FromRole="KyThi" ToRole="ThoiGian" />
+  </EntityType>
+  <EntityType Name="Level">
+    <Key>
+      <PropertyRef Name="MonHoc" />
+      <PropertyRef Name="DiemTB" />
+    </Key>
+    <Property Name="TenLevels" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="MonHoc" Type="Int32" Nullable="false" />
+    <Property Name="DiemTB" Type="Double" Nullable="false" />
+    <NavigationProperty Name="KhoaHocs" Relationship="Self.FK_KhoaHoc_Levels" FromRole="Levels" ToRole="KhoaHoc" />
+    <NavigationProperty Name="MonHoc1" Relationship="Self.FK_Levels_MonHoc" FromRole="Levels" ToRole="MonHoc" />
+  </EntityType>
+  <EntityType Name="Lop">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" />
+    <Property Name="TenLop" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="KhoaHoc" Type="Int32" />
+    <Property Name="MonHoc" Type="Int32" />
+    <Property Name="Levels" Type="Double" />
+    <NavigationProperty Name="KhoaHoc1" Relationship="Self.FK_Lop_KhoaHoc" FromRole="Lop" ToRole="KhoaHoc" />
+    <NavigationProperty Name="PhieuDangKies" Relationship="Self.FK_HocPhi_LopHoc" FromRole="Lop" ToRole="PhieuDangKy" />
+    <NavigationProperty Name="ThoiKhoaBieux" Relationship="Self.FK_ThoiKhoaBieu_LopHoc" FromRole="Lop" ToRole="ThoiKhoaBieu" />
+  </EntityType>
+  <EntityType Name="MonHoc">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" />
+    <Property Name="TenMonHoc" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="KyThis" Relationship="Self.FK_KyThi_MonHoc" FromRole="MonHoc" ToRole="KyThi" />
+    <NavigationProperty Name="Levels" Relationship="Self.FK_Levels_MonHoc" FromRole="MonHoc" ToRole="Levels" />
+  </EntityType>
+  <EntityType Name="PhieuDangKy">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" />
+    <Property Name="BienLai" Type="Int32" />
+    <Property Name="Lop" Type="Int32" />
+    <Property Name="SDT" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="NoiDungDK" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="NgayDK" Type="DateTime" Precision="0" />
+    <Property Name="XacNhan" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="BienLai1" Relationship="Self.FK_PhieuDangKy_BienLai" FromRole="PhieuDangKy" ToRole="BienLai" />
+    <NavigationProperty Name="Lop1" Relationship="Self.FK_HocPhi_LopHoc" FromRole="PhieuDangKy" ToRole="Lop" />
+    <NavigationProperty Name="User" Relationship="Self.FK_PhieuDangKy_HocSinh" FromRole="PhieuDangKy" ToRole="Users" />
+  </EntityType>
+  <EntityType Name="Phong">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" />
+    <Property Name="TenPhong" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="KyThis" Relationship="Self.FK_KyThi_PhongHoc" FromRole="Phong" ToRole="KyThi" />
+    <NavigationProperty Name="ThoiKhoaBieux" Relationship="Self.FK_ThoiKhoaBieu_PhongHoc" FromRole="Phong" ToRole="ThoiKhoaBieu" />
+  </EntityType>
+  <EntityType Name="sysdiagram">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="ThoiGian">
+    <Key>
+      <PropertyRef Name="Ngay" />
+    </Key>
+    <Property Name="Ngay" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="Gio" Type="Time" Precision="4" />
+    <NavigationProperty Name="KhoaHocs" Relationship="Self.FK_KhoaHoc_QLThoiGian" FromRole="ThoiGian" ToRole="KhoaHoc" />
+    <NavigationProperty Name="KyThis" Relationship="Self.FK_KyThi_QLThoiGian" FromRole="ThoiGian" ToRole="KyThi" />
+    <NavigationProperty Name="ThoiKhoaBieux" Relationship="Self.FK_ThoiKhoaBieu_QLThoiGian" FromRole="ThoiGian" ToRole="ThoiKhoaBieu" />
+  </EntityType>
+  <EntityType Name="ThoiKhoaBieu">
+    <Key>
+      <PropertyRef Name="ThoiGian" />
+      <PropertyRef Name="LopHoc" />
+    </Key>
+    <Property Name="ThoiGian" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="LopHoc" Type="Int32" Nullable="false" />
+    <Property Name="PhongHoc" Type="Int32" />
+    <NavigationProperty Name="Lop" Relationship="Self.FK_ThoiKhoaBieu_LopHoc" FromRole="ThoiKhoaBieu" ToRole="Lop" />
+    <NavigationProperty Name="Phong" Relationship="Self.FK_ThoiKhoaBieu_PhongHoc" FromRole="ThoiKhoaBieu" ToRole="Phong" />
+    <NavigationProperty Name="ThoiGian1" Relationship="Self.FK_ThoiKhoaBieu_QLThoiGian" FromRole="ThoiKhoaBieu" ToRole="ThoiGian" />
+  </EntityType>
+  <EntityType Name="User">
+    <Key>
+      <PropertyRef Name="SDT" />
+    </Key>
+    <Property Name="SDT" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="TenUser" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="DiaChi" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="HinhAnh" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="GioiTinh" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="MatKhau" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="QuyenTruyCap" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="DiemThis" Relationship="Self.FK_KetQua_HocSinh" FromRole="Users" ToRole="DiemThi" />
+    <NavigationProperty Name="KhoaHocs" Relationship="Self.FK_KhoaHoc_Users" FromRole="Users" ToRole="KhoaHoc" />
+    <NavigationProperty Name="PhieuDangKies" Relationship="Self.FK_PhieuDangKy_HocSinh" FromRole="Users" ToRole="PhieuDangKy" />
+  </EntityType>
+  <Association Name="FK_PhieuDangKy_BienLai">
+    <End Role="BienLai" Type="Self.BienLai" Multiplicity="0..1" />
+    <End Role="PhieuDangKy" Type="Self.PhieuDangKy" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="BienLai">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="PhieuDangKy">
+        <PropertyRef Name="BienLai" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DiemThi_KyThi">
+    <End Role="KyThi" Type="Self.KyThi" Multiplicity="1" />
+    <End Role="DiemThi" Type="Self.DiemThi" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="KyThi">
+        <PropertyRef Name="NgayThi" />
+        <PropertyRef Name="MonThi" />
+      </Principal>
+      <Dependent Role="DiemThi">
+        <PropertyRef Name="NgayThi" />
+        <PropertyRef Name="MonThi" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_KetQua_HocSinh">
+    <End Role="Users" Type="Self.User" Multiplicity="1" />
+    <End Role="DiemThi" Type="Self.DiemThi" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Users">
+        <PropertyRef Name="SDT" />
+      </Principal>
+      <Dependent Role="DiemThi">
+        <PropertyRef Name="Users" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_KhoaHoc_Levels">
+    <End Role="Levels" Type="Self.Level" Multiplicity="1" />
+    <End Role="KhoaHoc" Type="Self.KhoaHoc" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Levels">
+        <PropertyRef Name="MonHoc" />
+        <PropertyRef Name="DiemTB" />
+      </Principal>
+      <Dependent Role="KhoaHoc">
+        <PropertyRef Name="MonHoc" />
+        <PropertyRef Name="Levels" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_KhoaHoc_QLThoiGian">
+    <End Role="ThoiGian" Type="Self.ThoiGian" Multiplicity="0..1" />
+    <End Role="KhoaHoc" Type="Self.KhoaHoc" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ThoiGian">
+        <PropertyRef Name="Ngay" />
+      </Principal>
+      <Dependent Role="KhoaHoc">
+        <PropertyRef Name="NgayKhaiGiang" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_KhoaHoc_Users">
+    <End Role="Users" Type="Self.User" Multiplicity="0..1" />
+    <End Role="KhoaHoc" Type="Self.KhoaHoc" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Users">
+        <PropertyRef Name="SDT" />
+      </Principal>
+      <Dependent Role="KhoaHoc">
+        <PropertyRef Name="GiaoVien" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Lop_KhoaHoc">
+    <End Role="KhoaHoc" Type="Self.KhoaHoc" Multiplicity="0..1" />
+    <End Role="Lop" Type="Self.Lop" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="KhoaHoc">
+        <PropertyRef Name="ID" />
+        <PropertyRef Name="MonHoc" />
+        <PropertyRef Name="Levels" />
+      </Principal>
+      <Dependent Role="Lop">
+        <PropertyRef Name="KhoaHoc" />
+        <PropertyRef Name="MonHoc" />
+        <PropertyRef Name="Levels" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_KyThi_MonHoc">
+    <End Role="MonHoc" Type="Self.MonHoc" Multiplicity="1" />
+    <End Role="KyThi" Type="Self.KyThi" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MonHoc">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="KyThi">
+        <PropertyRef Name="MonThi" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_KyThi_PhongHoc">
+    <End Role="Phong" Type="Self.Phong" Multiplicity="0..1" />
+    <End Role="KyThi" Type="Self.KyThi" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Phong">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="KyThi">
+        <PropertyRef Name="PhongThi" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_KyThi_QLThoiGian">
+    <End Role="ThoiGian" Type="Self.ThoiGian" Multiplicity="1" />
+    <End Role="KyThi" Type="Self.KyThi" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ThoiGian">
+        <PropertyRef Name="Ngay" />
+      </Principal>
+      <Dependent Role="KyThi">
+        <PropertyRef Name="NgayThi" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Levels_MonHoc">
+    <End Role="MonHoc" Type="Self.MonHoc" Multiplicity="1" />
+    <End Role="Levels" Type="Self.Level" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MonHoc">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Levels">
+        <PropertyRef Name="MonHoc" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_HocPhi_LopHoc">
+    <End Role="Lop" Type="Self.Lop" Multiplicity="0..1" />
+    <End Role="PhieuDangKy" Type="Self.PhieuDangKy" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Lop">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="PhieuDangKy">
+        <PropertyRef Name="Lop" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ThoiKhoaBieu_LopHoc">
+    <End Role="Lop" Type="Self.Lop" Multiplicity="1" />
+    <End Role="ThoiKhoaBieu" Type="Self.ThoiKhoaBieu" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Lop">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="ThoiKhoaBieu">
+        <PropertyRef Name="LopHoc" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PhieuDangKy_HocSinh">
+    <End Role="Users" Type="Self.User" Multiplicity="0..1" />
+    <End Role="PhieuDangKy" Type="Self.PhieuDangKy" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Users">
+        <PropertyRef Name="SDT" />
+      </Principal>
+      <Dependent Role="PhieuDangKy">
+        <PropertyRef Name="SDT" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ThoiKhoaBieu_PhongHoc">
+    <End Role="Phong" Type="Self.Phong" Multiplicity="0..1" />
+    <End Role="ThoiKhoaBieu" Type="Self.ThoiKhoaBieu" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Phong">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="ThoiKhoaBieu">
+        <PropertyRef Name="PhongHoc" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ThoiKhoaBieu_QLThoiGian">
+    <End Role="ThoiGian" Type="Self.ThoiGian" Multiplicity="1" />
+    <End Role="ThoiKhoaBieu" Type="Self.ThoiKhoaBieu" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ThoiGian">
+        <PropertyRef Name="Ngay" />
+      </Principal>
+      <Dependent Role="ThoiKhoaBieu">
+        <PropertyRef Name="ThoiGian" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="DBAppWebHocThemEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="BienLais" EntityType="Self.BienLai" />
+    <EntitySet Name="DiemThis" EntityType="Self.DiemThi" />
+    <EntitySet Name="KhoaHocs" EntityType="Self.KhoaHoc" />
+    <EntitySet Name="KyThis" EntityType="Self.KyThi" />
+    <EntitySet Name="Levels" EntityType="Self.Level" />
+    <EntitySet Name="Lops" EntityType="Self.Lop" />
+    <EntitySet Name="MonHocs" EntityType="Self.MonHoc" />
+    <EntitySet Name="PhieuDangKies" EntityType="Self.PhieuDangKy" />
+    <EntitySet Name="Phongs" EntityType="Self.Phong" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagram" />
+    <EntitySet Name="ThoiGians" EntityType="Self.ThoiGian" />
+    <EntitySet Name="ThoiKhoaBieux" EntityType="Self.ThoiKhoaBieu" />
+    <EntitySet Name="Users" EntityType="Self.User" />
+    <AssociationSet Name="FK_PhieuDangKy_BienLai" Association="Self.FK_PhieuDangKy_BienLai">
+      <End Role="BienLai" EntitySet="BienLais" />
+      <End Role="PhieuDangKy" EntitySet="PhieuDangKies" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DiemThi_KyThi" Association="Self.FK_DiemThi_KyThi">
+      <End Role="KyThi" EntitySet="KyThis" />
+      <End Role="DiemThi" EntitySet="DiemThis" />
+    </AssociationSet>
+    <AssociationSet Name="FK_KetQua_HocSinh" Association="Self.FK_KetQua_HocSinh">
+      <End Role="Users" EntitySet="Users" />
+      <End Role="DiemThi" EntitySet="DiemThis" />
+    </AssociationSet>
+    <AssociationSet Name="FK_KhoaHoc_Levels" Association="Self.FK_KhoaHoc_Levels">
+      <End Role="Levels" EntitySet="Levels" />
+      <End Role="KhoaHoc" EntitySet="KhoaHocs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_KhoaHoc_QLThoiGian" Association="Self.FK_KhoaHoc_QLThoiGian">
+      <End Role="ThoiGian" EntitySet="ThoiGians" />
+      <End Role="KhoaHoc" EntitySet="KhoaHocs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_KhoaHoc_Users" Association="Self.FK_KhoaHoc_Users">
+      <End Role="Users" EntitySet="Users" />
+      <End Role="KhoaHoc" EntitySet="KhoaHocs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Lop_KhoaHoc" Association="Self.FK_Lop_KhoaHoc">
+      <End Role="KhoaHoc" EntitySet="KhoaHocs" />
+      <End Role="Lop" EntitySet="Lops" />
+    </AssociationSet>
+    <AssociationSet Name="FK_KyThi_MonHoc" Association="Self.FK_KyThi_MonHoc">
+      <End Role="MonHoc" EntitySet="MonHocs" />
+      <End Role="KyThi" EntitySet="KyThis" />
+    </AssociationSet>
+    <AssociationSet Name="FK_KyThi_PhongHoc" Association="Self.FK_KyThi_PhongHoc">
+      <End Role="Phong" EntitySet="Phongs" />
+      <End Role="KyThi" EntitySet="KyThis" />
+    </AssociationSet>
+    <AssociationSet Name="FK_KyThi_QLThoiGian" Association="Self.FK_KyThi_QLThoiGian">
+      <End Role="ThoiGian" EntitySet="ThoiGians" />
+      <End Role="KyThi" EntitySet="KyThis" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Levels_MonHoc" Association="Self.FK_Levels_MonHoc">
+      <End Role="MonHoc" EntitySet="MonHocs" />
+      <End Role="Levels" EntitySet="Levels" />
+    </AssociationSet>
+    <AssociationSet Name="FK_HocPhi_LopHoc" Association="Self.FK_HocPhi_LopHoc">
+      <End Role="Lop" EntitySet="Lops" />
+      <End Role="PhieuDangKy" EntitySet="PhieuDangKies" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ThoiKhoaBieu_LopHoc" Association="Self.FK_ThoiKhoaBieu_LopHoc">
+      <End Role="Lop" EntitySet="Lops" />
+      <End Role="ThoiKhoaBieu" EntitySet="ThoiKhoaBieux" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PhieuDangKy_HocSinh" Association="Self.FK_PhieuDangKy_HocSinh">
+      <End Role="Users" EntitySet="Users" />
+      <End Role="PhieuDangKy" EntitySet="PhieuDangKies" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ThoiKhoaBieu_PhongHoc" Association="Self.FK_ThoiKhoaBieu_PhongHoc">
+      <End Role="Phong" EntitySet="Phongs" />
+      <End Role="ThoiKhoaBieu" EntitySet="ThoiKhoaBieux" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ThoiKhoaBieu_QLThoiGian" Association="Self.FK_ThoiKhoaBieu_QLThoiGian">
+      <End Role="ThoiGian" EntitySet="ThoiGians" />
+      <End Role="ThoiKhoaBieu" EntitySet="ThoiKhoaBieux" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>
